@@ -8,11 +8,10 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.4',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-
   use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
@@ -48,12 +47,14 @@ return require('packer').startup(function(use)
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
+	  branch = 'v3.x',
 	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+          --- Uncomment these if you want to manage LSP servers from neovim
+          {'williamboman/mason.nvim'},
+          {'williamboman/mason-lspconfig.nvim'},
+
+          -- LSP Support
+          {'neovim/nvim-lspconfig'},
 
 		  -- Autocompletion
 		  {'hrsh7th/nvim-cmp'},
@@ -73,6 +74,20 @@ return require('packer').startup(function(use)
   use("github/copilot.vim")
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
+  use("voldikss/vim-floaterm")
+  use("folke/neodev.nvim")
+
+  use {
+	  'saecki/crates.nvim', tag = 'v0.4.0',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  -- Remove commit line when this PR is merged:
+  -- https://github.com/rest-nvim/rest.nvim/pull/255
+  use {
+      "rest-nvim/rest.nvim",
+      commit = "8b62563",
+      requires = { "nvim-lua/plenary.nvim" } }
 
 end)
 
