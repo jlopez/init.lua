@@ -1,5 +1,8 @@
+require("theprimeagen.bootstrap")
 require("theprimeagen.set")
 require("theprimeagen.remap")
+require("theprimeagen.lazy")
+require("theprimeagen.netrw")
 
 -- DO NOT INCLUDE THIS
 vim.opt.rtp:append("~/personal/streamer-tools")
