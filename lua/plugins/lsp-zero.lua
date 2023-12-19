@@ -44,6 +44,10 @@ return {
             vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         end)
 
+        require('lspconfig').sourcekit.setup({
+            cmd = {'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp'},
+        })
+
         require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = {
