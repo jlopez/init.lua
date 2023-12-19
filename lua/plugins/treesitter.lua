@@ -2,9 +2,21 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = function()
+        -- https://www.reddit.com/r/neovim/comments/16gd5zp/comment/k076s81
+        ---@diagnostic disable-next-line: missing-fields
         require('nvim-treesitter.configs').setup({
             -- A list of parser names, or "all"
-            ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust" },
+            ensure_installed = {
+                "vimdoc",
+                "javascript",
+                "typescript",
+                "c",
+                "lua",
+                "rust",
+                -- Required by rest.nvim
+                "http",
+                "json",
+            },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
