@@ -1,5 +1,6 @@
 return {
     "goolord/alpha-nvim",
+    enabled = false,
     dependencies = {
         "kyazdani42/nvim-web-devicons",
     },
