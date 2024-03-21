@@ -1,6 +1,8 @@
 return {
     "nvim-neo-tree/neo-tree.nvim",
-    cmd = "NeoTree",
+    -- Not lazy, we need it to hijack netrw
+    lazy = false,
+    cmd = "Neotree",
     branch = "v3.x",
     keys = {
         { "<leader>pv", "<cmd>Neotree<cr>", desc = "NeoTree" },
