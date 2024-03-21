@@ -12,10 +12,13 @@ return {
         "kyazdani42/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
         "3rd/image.nvim",
+        "aperezdc/vim-template",
     },
     config = {
         filesystem = {
-            follow_current_file = true,
+            follow_current_file = {
+                enabled = true,
+            },
             hijack_netrw = "open_current",
         },
         event_handlers = {
@@ -24,6 +27,12 @@ return {
                 handler = function()
                     -- auto close
                     require('neo-tree.command').execute({ action = 'close' })
+                end,
+            }, {
+                event = "file_added",
+                handler = function(path)
+                    vim.cmd("e " .. path)
+                    vim.cmd("Template")
                 end,
             },
         },
