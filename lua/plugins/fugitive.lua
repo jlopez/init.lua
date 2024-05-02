@@ -10,7 +10,7 @@ return {
         { '<leader>gb', "<cmd>'<,'>GBrowse<CR>", mode='x' },
         { '<leader><leader>', '<cmd>GBrowse<CR>', ft='fugitive', buffer=0, remap=false },
         { '<leader>p', '<cmd>Git push<CR>', ft='fugitive', buffer=0, remap=false },
-        { '<leader>P', '<cmd>Git push --amend<CR>', ft='fugitive', buffer=0, remap=false },
+        { '<leader>P', '<cmd>Git push -f<CR>', ft='fugitive', buffer=0, remap=false },
     },
     cmd = { 'Git', 'Gbrowse' },
 }
